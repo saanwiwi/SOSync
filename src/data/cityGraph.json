@@ -1,0 +1,72 @@
+{
+  "nodes": {
+    "A": {
+      "id": "A",
+      "lat": 40.7128,
+      "lng": -74.0060,
+      "name": "Central Hospital"
+    },
+    "B": {
+      "id": "B",
+      "lat": 40.7150,
+      "lng": -74.0030,
+      "name": "Main St Intersection"
+    },
+    "C": {
+      "id": "C",
+      "lat": 40.7180,
+      "lng": -74.0010,
+      "name": "North Bridge"
+    },
+    "D": {
+      "id": "D",
+      "lat": 40.7110,
+      "lng": -73.9980,
+      "name": "East Shelter"
+    },
+    "E": {
+      "id": "E",
+      "lat": 40.7140,
+      "lng": -73.9950,
+      "name": "River Road"
+    }
+  },
+  "edges": [
+    {
+      "from": "A",
+      "to": "B",
+      "weight": 5,
+      "flooded": false
+    },
+    {
+      "from": "B",
+      "to": "C",
+      "weight": 4,
+      "flooded": false
+    },
+    {
+      "from": "A",
+      "to": "D",
+      "weight": 3,
+      "flooded": false
+    },
+    {
+      "from": "D",
+      "to": "E",
+      "weight": 6,
+      "flooded": false
+    },
+    {
+      "from": "B",
+      "to": "E",
+      "weight": 2,
+      "flooded": false
+    },
+    {
+      "from": "C",
+      "to": "E",
+      "weight": 4,
+      "flooded": false
+    }
+  ]
+}
