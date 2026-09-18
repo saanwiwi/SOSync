@@ -138,3 +138,13 @@ class GraphRoutingEngine {
 }
 
 export const routingEngine = new GraphRoutingEngine();
+// Integration examples:
+//
+// Person 1 - get route:
+// routingEngine.findPath('A', 'C');
+//
+// Person 5 - simulate flood:
+// routingEngine.toggleFlood('A', 'B', true);
+//
+// Person 5 - calculate rerouted path:
+// routingEngine.findPath('A', 'C');
