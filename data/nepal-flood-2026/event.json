@@ -1,0 +1,56 @@
+{
+  "event": {
+    "name": "Bhote Koshi Flood Event",
+    "country": "Nepal",
+    "date": "2026-08-26",
+    "status": "HISTORICAL_REPLAY",
+    "source": "Department of Hydrology and Meteorology, Government of Nepal"
+  },
+
+  "stations": [
+    {
+      "name": "Bhotekoshi at Rasuwagadi",
+      "river": "Bhote Koshi",
+      "latitude": 28.271297,
+      "longitude": 85.377649,
+      "waterLevelM": 1.62,
+      "time": "08:40",
+      "status": "OBSERVED"
+    },
+
+    {
+      "name": "Bhotekoshi at Syaphrubesi",
+      "river": "Bhote Koshi",
+      "waterLevelM": 3.804,
+      "time": "08:50",
+      "status": "OBSERVED"
+    },
+
+    {
+      "name": "Trishuli at Betrawati",
+      "river": "Trishuli",
+      "waterLevelM": 3.549,
+      "time": "09:20",
+      "status": "OBSERVED"
+    },
+
+    {
+      "name": "Devghat",
+      "river": "Narayani",
+      "waterLevelM": 6.57,
+      "time": "16:00",
+      "status": "OBSERVED"
+    }
+  ],
+
+  "rainfall": {
+    "source": "DHM",
+    "status": "OBSERVED",
+    "eventDate": "2026-08-26"
+  },
+
+  "simulation": {
+    "status": "SIMULATED",
+    "description": "Flood extent generated using historical observations from the 26 August 2026 Nepal flood event."
+  }
+}
