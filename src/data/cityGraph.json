@@ -1,0 +1,34 @@
+{
+  "nodes": {
+    "A": { "lat": 27.7172, "lng": 85.3240, "name": "Thamel" },
+    "B": { "lat": 27.7050, "lng": 85.3140, "name": "Swayambhunath" },
+    "C": { "lat": 27.7000, "lng": 85.3206, "name": "Ratna Park" },
+    "D": { "lat": 27.6947, "lng": 85.3210, "name": "Singha Durbar" },
+    "E": { "lat": 27.6726, "lng": 85.3258, "name": "Patan Durbar Square" },
+    "F": { "lat": 27.7300, "lng": 85.3000, "name": "Balaju" },
+    "G": { "lat": 27.7120, "lng": 85.3400, "name": "Durbarmarg" },
+    "H": { "lat": 27.6850, "lng": 85.3380, "name": "Tripureshwor" },
+    "I": { "lat": 27.6780, "lng": 85.3100, "name": "Kirtipur" },
+    "J": { "lat": 27.7250, "lng": 85.3390, "name": "Lazimpat" }
+  },
+  "edges": [
+    { "from": "A", "to": "B", "weight": 3.2, "flooded": false },
+    { "from": "A", "to": "C", "weight": 2.0, "flooded": false },
+    { "from": "A", "to": "G", "weight": 1.5, "flooded": false },
+    { "from": "A", "to": "J", "weight": 1.8, "flooded": false },
+    { "from": "A", "to": "F", "weight": 3.5, "flooded": false },
+    { "from": "B", "to": "C", "weight": 2.5, "flooded": false },
+    { "from": "B", "to": "F", "weight": 2.8, "flooded": false },
+    { "from": "B", "to": "I", "weight": 4.0, "flooded": false },
+    { "from": "C", "to": "D", "weight": 1.0, "flooded": false },
+    { "from": "C", "to": "G", "weight": 1.8, "flooded": false },
+    { "from": "D", "to": "E", "weight": 2.5, "flooded": false },
+    { "from": "D", "to": "H", "weight": 1.5, "flooded": false },
+    { "from": "E", "to": "H", "weight": 2.0, "flooded": false },
+    { "from": "E", "to": "I", "weight": 3.0, "flooded": false },
+    { "from": "F", "to": "J", "weight": 4.0, "flooded": false },
+    { "from": "G", "to": "H", "weight": 3.0, "flooded": false },
+    { "from": "G", "to": "J", "weight": 2.2, "flooded": false },
+    { "from": "H", "to": "I", "weight": 2.5, "flooded": false }
+  ]
+}

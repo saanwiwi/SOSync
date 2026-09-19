@@ -18,7 +18,7 @@ export default function WaterBackground({ children }) {
     };
     window.addEventListener('resize', handleResize);
 
-    // Ultra-smooth slow-motion physics (low lerp factor)
+    // Smooth tactical water ripples
     const mouse = { x: width / 2, y: height / 2, tx: width / 2, ty: height / 2 };
     const ripples = [];
 
@@ -26,14 +26,13 @@ export default function WaterBackground({ children }) {
       mouse.tx = e.clientX;
       mouse.ty = e.clientY;
       
-      // Gentle, slow-motion blue water drops
-      if (Math.random() < 0.25) {
+      if (Math.random() < 0.2) {
         ripples.push({
           x: e.clientX,
           y: e.clientY,
           r: 5,
-          maxR: 180,
-          alpha: 0.4
+          maxR: 160,
+          alpha: 0.35
         });
       }
     };
@@ -41,17 +40,16 @@ export default function WaterBackground({ children }) {
     window.addEventListener('mousemove', handleMouseMove);
 
     const render = () => {
-      // Slow-motion lerp (0.03 makes it lag lazily and smoothly like deep water)
-      mouse.x += (mouse.tx - mouse.x) * 0.03;
-      mouse.y += (mouse.ty - mouse.y) * 0.03;
+      mouse.x += (mouse.tx - mouse.x) * 0.04;
+      mouse.y += (mouse.ty - mouse.y) * 0.04;
 
       ctx.clearRect(0, 0, width, height);
 
-      // Render expanding slow-motion blue water ripples
+      // Render expanding dark green & cyan ripples
       for (let i = ripples.length - 1; i >= 0; i--) {
         const p = ripples[i];
-        p.r += 0.8; // Very slow expansion
-        p.alpha *= 0.98; // Very slow fade
+        p.r += 0.9;
+        p.alpha *= 0.98;
 
         if (p.alpha <= 0.005) {
           ripples.splice(i, 1);
@@ -60,20 +58,20 @@ export default function WaterBackground({ children }) {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(59, 130, 246, ${p.alpha})`; // Vivid Blue
+        ctx.strokeStyle = `rgba(16, 185, 129, ${p.alpha})`; // Emerald pulse
         ctx.lineWidth = 1.2;
         ctx.stroke();
       }
 
-      // Large, soft, dreamy blue water aura following the cursor in slow motion
-      const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 220);
-      gradient.addColorStop(0, 'rgba(37, 99, 235, 0.12)'); // Deep Blue Core
-      gradient.addColorStop(0.5, 'rgba(14, 165, 233, 0.04)'); // Sky Blue Fade
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      // Soft deep-blue / emerald radial aura following cursor
+      const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 240);
+      gradient.addColorStop(0, 'rgba(6, 78, 59, 0.15)'); // Dark Green
+      gradient.addColorStop(0.5, 'rgba(14, 165, 233, 0.05)'); // Deep Cyan
+      gradient.addColorStop(1, 'rgba(2, 8, 23, 0)'); // Fade to Dark Blue
 
       ctx.fillStyle = gradient;
       ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, 220, 0, Math.PI * 2);
+      ctx.arc(mouse.x, mouse.y, 240, 0, Math.PI * 2);
       ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);
@@ -89,7 +87,7 @@ export default function WaterBackground({ children }) {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-earth-radar">
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#020817]">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 pointer-events-none z-0"

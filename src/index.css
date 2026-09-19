@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,23 +6,87 @@
 
 @layer base {
   body {
-    font-family: 'Outfit', sans-serif;
-    background-color: #facc15; /* Striking Butter/Safety Gold */
-    color: #0f172a;
+    background-color: #020617;
+    color: #f1f5f9;
+    font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
+  }
+
+  h1, h2, .editorial-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  ::selection {
+    background-color: #38bdf8;
+    color: #020617;
   }
 }
 
-@layer utilities {
-  .font-mono {
-    font-family: 'JetBrains Mono', monospace;
-  }
-  
-  .bg-butter-grid {
-    background-color: #facc15;
-    background-image: 
-      linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Brutalist Interactive Pill Nav */
+.brutal-pill {
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #38bdf8;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutal-pill:hover {
+  background-color: #38bdf8;
+  color: #020617;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px rgba(56, 189, 248, 0.4);
+}
+
+/* Interactive Brutalist Hardware Display Cards */
+.hardware-card {
+  border: 3px solid rgba(56, 189, 248, 0.3);
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 10px 10px 0px rgba(56, 189, 248, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hardware-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #38bdf8;
+  box-shadow: 16px 16px 0px rgba(56, 189, 248, 0.35);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
